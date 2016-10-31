@@ -1,4 +1,4 @@
-package com.zac.common;
+package com.zac.test;
 
 public class Test {
 

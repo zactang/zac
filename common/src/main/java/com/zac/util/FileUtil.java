@@ -102,7 +102,7 @@ public class FileUtil {
         }  
     }  
     /**
-     * 复制文件到指定目录
+     * copy file to directory
      * @param toDir
      * @param file
      * @param newName
@@ -119,7 +119,7 @@ public class FileUtil {
         file.delete();//刪除原文件
     }  
     /**
-     * 复制文件 
+     * copy file
      * @param toFile
      * @param fromFile
      */
@@ -148,7 +148,7 @@ public class FileUtil {
         }  
     }  
     /**
-     * 获取文件绝对路径
+     * get file directory
      * @param dir
      * @return
      */
@@ -162,7 +162,7 @@ public class FileUtil {
         return files;  
     }  
     /**
-     * create file or dirctory
+     * create file or directory
      * @param path
      * @param isFile
      */
@@ -170,9 +170,9 @@ public class FileUtil {
         createFile(new File(path), isFile);// 调用方法创建新文件或目录  
     }  
     /**
-     * 创建文件
+     * create file
      * @param file
-     * @param isFile
+     * @param isFile is file /not directory
      */
     public static void createFile(File file, boolean isFile) {  
         if (!file.exists()) {// 如果文件不存在  

@@ -1,7 +1,7 @@
 package com.zac.security.des;
 
 /**
- * DES add password
+ * DES  password
  * 
  */
  class DES {

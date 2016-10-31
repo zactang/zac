@@ -1,4 +1,4 @@
-package com.zac.common;
+package com.zac.test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.zac.common.ben.Tb_Obj;
+import com.zac.bean.MapObject;
 
 public class DBTest {
 
@@ -23,11 +23,11 @@ public class DBTest {
 		 String driver="org.sqlite.JDBC";
 		 String url="jdbc:sqlite:"+fileName;
 		 //execSql(driver, url, null, null);
-		 Tb_Obj[][] res=querySql(driver,url,null,null);
-		 for (Tb_Obj[] tb_Objs : res) {
+		 MapObject[][] res=querySql(driver,url,null,null);
+		 for (MapObject[] tb_Objs : res) {
 			 System.out.println("======================");
-			 for (Tb_Obj tb_Obj : tb_Objs) {
-				System.out.println(tb_Obj.getColName()+":"+tb_Obj.getColValue());
+			 for (MapObject tb_Obj : tb_Objs) {
+				System.out.println(tb_Obj.getKey()+":"+tb_Obj.getValue());
 			}
 			 System.out.println("======================");
 		}
@@ -40,7 +40,7 @@ public class DBTest {
 		
 	}
 	
-	public static Tb_Obj[][] querySql(String driver,String url,String uname,String pwd){
+	public static MapObject[][] querySql(String driver,String url,String uname,String pwd){
 		try {
             Class.forName(driver);
             Connection conn = DriverManager.getConnection(url);
@@ -76,17 +76,17 @@ public class DBTest {
            
             System.out.println("【colNames size:"+colNames.size()+"】");	
             
-            Tb_Obj[][] allDate=new Tb_Obj[rows][colNames.size()];
+            MapObject[][] allDate=new MapObject[rows][colNames.size()];
             int rowIndex=0;
             
             while (rs.next()) {
-            	Tb_Obj[] col=new Tb_Obj[colNames.size()];
+            	MapObject[] col=new MapObject[colNames.size()];
             	//System.out.println("======================");
             	int colIndex=0;
             	for (String colname : colNames) {
             		String colvalue=rs.getString(colname);
             		//System.out.println(colvalue);
-            		col[colIndex]=new Tb_Obj(colname,colvalue);
+            		col[colIndex]=new MapObject(colname,colvalue);
             		colIndex++;
     			}
             	//System.out.println("======================["+rowIndex+"]");

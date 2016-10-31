@@ -8,21 +8,12 @@ package com.zac.util;
 public class DBUtil {
 
 	public enum DBType{
-		/**
-		 * H2
-		 */
-		H2,
-		/**
-		 * MySql
-		 */
-		MYSQL,
-		ORACLE,
-		POSTGRESQL,
-		SQLSERVER,
-		/**
-		 * org.sqlite.JDBC
-		 */
-		SQLITE
+		/** H2*/H2,
+		/**MySql*/MYSQL,
+		/**ORACLE*/ORACLE,
+		/**POSTGRESQL*/POSTGRESQL,
+		/**MS-SQLSERVER*/SQLSERVER,
+		/**org.sqlite.JDBC*/SQLITE
 	}
 	/**
 	 * get type of DB by URL of JDBC

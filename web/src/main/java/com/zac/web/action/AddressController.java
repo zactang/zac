@@ -6,8 +6,8 @@ import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.zac.common.DBTest;
-import com.zac.common.ben.Tb_Obj;
+import com.zac.bean.Tb_Obj;
+import com.zac.test.DBTest;
 
 @Controller
 @RequestMapping("/addr")
